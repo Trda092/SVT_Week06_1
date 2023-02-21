@@ -4,11 +4,15 @@ pipeline {
         stage('pre -build') {
             steps {
                 sh 'echo Pre-build'
+                sh 'python3 --version'
+                sh 'printenv'
             }
         }
         stage('build') {
             steps {
                 sh 'echo Building'
+                sh 'mkdir testPy'
+                sh 'touch testPy/test.py'
             }
         }
         stage('Unit tests') {
